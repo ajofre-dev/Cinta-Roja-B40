@@ -14,7 +14,7 @@ const mulan = new Pelicula("Mulan", 120, "Tony", "Mulan", "Caricaturas");
 
 const spiderman = new Pelicula("Spiderman", 100, "Desconocido", "Peter", "Acción");
 
-//console.log(spiderman);
+console.log(spiderman);
 
 module.exports = {
     mulan, spiderman
