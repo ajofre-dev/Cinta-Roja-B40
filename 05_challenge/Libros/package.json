@@ -1,0 +1,17 @@
+{
+  "name": "libros",
+  "version": "1.0.0",
+  "description": "Libros",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Libros"
+  ],
+  "author": "Alba",
+  "license": "ISC",
+  "dependencies": {
+    "request": "^2.88.2"
+  }
+}
