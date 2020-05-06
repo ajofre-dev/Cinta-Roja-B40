@@ -15,7 +15,7 @@ class Edificio extends Construcciones{
     }
 
     direccionVieja () {
-        return this.direccion
+        return `La dirección es ${this.direccion}`
     }
 
     direccionNueva () {

@@ -12,7 +12,7 @@ class Mfisica extends Maestro {
 }
 
     const array1 = [8, 8, 8, 8];
-    const reducer = (acumulator, currentValue) => acumulator += currentValue / array1.length;
+    const reducer = ((acumulator, currentValue) => acumulator += currentValue) / array1.length;
 
 const Mfisica01 = new Mfisica("Alonso", "Mate", "Liceo")
 
