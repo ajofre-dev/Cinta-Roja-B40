@@ -1,0 +1,27 @@
+.card {
+    height: 250px;
+    width: 200px;
+    border-radius: 20px;
+    box-shadow: 0 6px 28px 0 rgba(24, 52, 117, 0.2);    
+    transition: all 200ms ease;
+    padding: 10px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    box-shadow: 0 7px 23px 0 rgba(24, 48, 85, 0.22);
+    transform: scale(1.05);
+}
+
+.card span {
+    margin-top: 10px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.blanca {
+    background-color: white;
+}

@@ -12,7 +12,7 @@ const buscaLibro = (nombre) => {
         if (response.statusCode === 200) {
             console.log("Hay un libro");
             const respuesta = JSON.parse(body);
-            console.log(`Encontré un el libro ${respuesta.docs[0].title_suggest}, escrito por ${respuesta.docs[0].author_name[0]} y ${respuesta.docs[0].author_name[1]} `);
+            console.log(`Encontré un el libro ${respuesta.docs[0].title_suggest}, escrito por ${respuesta.docs[0].author_name[0]}`);
         } else {
             console.log(`No encontré el Libro - HTTP status: ${response.statusCode} ${response.statusMessage}`);
             console.log(error);
@@ -20,22 +20,22 @@ const buscaLibro = (nombre) => {
     });
 }
 
-buscaLibro();
+buscaLibro("los miserables");
 
-const buscaAutor = () => {
-    const URL = 'http://openlibrary.org/search.json?author=asimov'
-    //nombre = nombre.toLowerCase();
+const buscaAutor = (nombreautor) => {
+    const URL = 'http://openlibrary.org/search.json?author='
+    nombreautor = nombreautor.toLowerCase();
 
 
-    request(`${URL}`, (error, response, body) => {
+    request(`${URL}${nombreautor}`, (error, response, body) => {
         if (response.statusCode === 200) {
             console.log("Hay un libro");
             const respuesta = JSON.parse(body);
-            for (let i = 0; i = respuesta.docs.length; i++);
-            if (respuesta.docs.length = 5) {
-                console.log(`Encontré un el libro ${respuesta.docs[i].title_suggest}, escrito por ${respuesta.docs[0].author_name[0]}`);
-            } else {
-            }
+            //for (let i = 0; i = respuesta.docs.length; i++);
+            //if (respuesta.docs.length = 5) {
+                console.log(`Encontré un el libro ${respuesta.docs[0].title_suggest}, escrito por ${respuesta.docs[0].author_name[0]}`);
+            //} else {
+            //}
         } else {
             console.log(`No encontré el Libro - HTTP status: ${response.statusCode} ${response.statusMessage}`);
             console.log(error);
@@ -46,4 +46,4 @@ const buscaAutor = () => {
     });
 }
 
-buscaAutor();
+buscaAutor("asimov");
