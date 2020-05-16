@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios'
 
-const Task = ({ title, priority, time, id, done }) => {
+const Task = ({ title, priority, time, id, done, getTasks }) => {
 
     const [check, setCheck] = useState(done);
 
@@ -21,8 +21,9 @@ const Task = ({ title, priority, time, id, done }) => {
     }
 
     const deleteNotification = () => {
-        axios.delete(`https://ajtodocrud.firebaseio.com/task/${id}.json`);
-        //.then(() => window.location.reload())
+        axios.delete(`https://ajtodocrud.firebaseio.com/task/${id}.json`)
+        .then(() => window.location.reload())
+        //.then(() => getTasks())
 
     }
 
@@ -43,7 +44,7 @@ const Task = ({ title, priority, time, id, done }) => {
                     <label className="form-check-label" htmlFor={id}>
                     {`${time} horas`}
                     </label>
-                    <button onClick={() => deleteNotification} type="button" className="btn btn-danger">Eliminar</button>
+                    <button onClick={() => deleteNotification()} type="button" className="btn btn-danger">Eliminar</button>
                 </div>
             </div>
         </div>

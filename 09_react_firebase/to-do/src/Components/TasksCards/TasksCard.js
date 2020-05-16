@@ -7,10 +7,19 @@ const TasksCard = () => {
 
     const [tasks, setTasks] = useState({});
 
-    useEffect(() => {
+    //useEffect(() => {
+    //axios.get(`https://ajtodocrud.firebaseio.com/task.json`)
+    // .then(({ data }) => setTasks(data));
+    // }, [])
+
+    const getTasks = () => {
         axios.get(`https://ajtodocrud.firebaseio.com/task.json`)
             .then(({ data }) => setTasks(data));
-    }, [])
+    }
+
+    useEffect(() => {
+        getTasks();
+    }, []);
 
     return (
         <div className="card">
